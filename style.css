@@ -169,38 +169,42 @@ header p {
 header div.buttons {
     display: flex;
     justify-content: center;
-    align-items: center;
     margin-top: 20px;
-    height: 1cm;
-    gap: 15px;
+    height: 1.1cm;
+    
+    padding: 10px;
 }
 
 header button.btn-1 {
-    background-color: var(--span-color);
+    background-color: var(--dark-color);
     color: var(--white-color);
     border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
     padding: 7px;
-    border-radius: 20px;
+    border-radius: 50px;
     font-size: 15px;
     font-family: var(--font-family);
-    font-weight: 200;
+    font-weight: 300;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 10;
+    margin-right: 20px;
+    width: 120px;
 
 }
 
 header button.btn-2 {
-    background-color: var(--secondary-color);
+background-color: var(--dark-color);
     color: var(--white-color);
     border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
     padding: 7px;
-    border-radius: 20px;
+    border-radius: 25px;
     font-size: 15px;
     font-family: var(--font-family);
-    font-weight: 400;
+    font-weight: 300;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    width: 120px;
 
 }
 
@@ -212,23 +216,26 @@ main {
     padding: 10px 2px;
 }
 
-main h1 {
-    font-size: 2rem;
+
+main section h1 {
+    font-size: 3rem;
     color: var(--dark-color);
     font-family: var(--font-family);
     font-weight: 600;
-    margin-bottom: 10px;
-    margin-left: 6rem;
+    margin-bottom: 10px; 
+    text-align: center;
+    
 }
 
-main .projects {
+main .project-container {
 
     display: flex;
-   justify-content: center;
+    justify-content: center;
+    
 
 }
 
-main .projects div{
+main .project-container div {
     margin: 10px;
     padding: 15px;
     border: none;
@@ -243,11 +250,11 @@ main .projects div{
     cursor: pointer;
 }
 
-main .projects div:hover {
+main .project-container div:hover {
     transform: translateY(-5px);
 }
 
-main .projects div .project-overlay {
+main .project-container div .project-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -265,19 +272,19 @@ main .projects div .project-overlay {
     border-radius: 10px;
 }
 
-main .projects div:hover .project-overlay {
+main .project-container div:hover .project-overlay {
     opacity: 1;
 }
 
-main .projects div .project-overlay h3 {
+main .project-container div .project-overlay h3 {
     font-size: 1.5rem;
     font-family: var(--font-family);
     font-weight: 600;
     margin-bottom: 10px;
-    color: var(--white-colorcolor);
+    color: var(--white-color);
 }
 
-main .projects div .project-overlay p {
+main .project-container div .project-overlay p {
     font-size: 1rem;
     font-family: var(--font-family);
     font-weight: 400;
@@ -289,12 +296,94 @@ main section div img {
     width: 12cm;
     border-radius: 10px;
 }
-main section div p{
+
+main section div p {
     font-size: 1.2rem;
     color: var(--white-color);
     font-family: var(--font-family);
     font-weight: 500;
     margin-top: 10px;
+}
+
+main section.skills {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+main section.skills h1 {
+    font-size: 3rem;
+    color: var(--dark-color);
+    font-family: var(--font-family);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+main section.skills .skill-container {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+main section.skills .skill-div {
+    flex: 1;
+    max-width: 300px;
+    margin: 10px;
+    
+}
+
+main section.skills .skill-div h2 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-family: var(--font-family);
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+main section.skills .skill-div ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+main section.skills .skill-div ul li {
+    color: var(--dark-color);
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: var(--font-family);
+    font-weight: 500;
+    text-align: center;   
+}
+
+section.story {
+    margin: 20px;
+    padding: 10px 2px;
+}
+section.story h1 {
+    font-size: 3rem;
+    color: var(--dark-color);
+    font-family: var(--font-family);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+section.story h1 span {
+    color: var(--span-color);
+    font-size: 5rem;}
+section.story p{
+    font-size: 1.2rem;
+    color: var(--dark-color);
+    font-family: var(--font-family);
+    font-weight: 500;
+    margin-top: 10px;
+    white-space: normal;
+    text-align: center;
+
+}
+section.story p a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
 }
 
 aside {

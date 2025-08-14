@@ -116,24 +116,37 @@ header {
     justify-content: center;
     justify-content: space-evenly;
     display: flex;
-    margin-top: 10rem;
+    margin-top: 8rem;
+    background: linear-gradient(135deg, var(--white-color) 0%, rgba(255,255,255,0.9) 100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    transition: all 0.5s ease;
+    animation: headerFadeIn 1s ease-out;
+    position: relative;
+    overflow: hidden;
 
-
-
+}
+header:hover {
+    transform: translateY(50px) scale(1.05) ;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    cursor: pointer;
 }
 
 header div.image-container {
     border: 1px solid var(--dark-color);
-    padding: 5px;
+    padding: 25px;
     border-radius: 50%;
+    margin-bottom: 5rem;
 }
 
 header img {
-    width: 9cm;
-    height: 9cm;
+    width: 10cm;
+    height: 10cm;
     border-radius: 50%;
     padding: 0px;
     box-shadow: 0 4px 8px rgba(216, 9, 9, 0.1);
+    position: inherit;
+    
 }
 
 header h1 {

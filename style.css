@@ -253,6 +253,7 @@ main section h1 {
 
 }
 
+
 main .project-container {
 
     display: flex;
@@ -380,7 +381,100 @@ main section.skills .skill-div ul li {
     font-family: var(--font-family);
     font-weight: 600;
     text-align: center;
-}
+    border: 2px solid var(--dark-color);
+    padding: 5px;
+    margin: 10px 20px;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    }
+
+    main section.skills .skill-div ul li::after {
+        content: "0%";
+        position: absolute;
+        top: 0;
+        right: 20px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        color: var(--dark-color);
+        font-weight: 700;
+        opacity: 0;
+        z-index: 1;
+    }
+
+    main section.skills .skill-div ul li::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        background: linear-gradient(90deg, 
+            rgba(105, 117, 101, 0.2) 0%, 
+            rgba(105, 117, 101, 0.4) 100%);
+        z-index: 0;
+        border-radius: 50px;
+        transition: width 0s;
+    }
+
+    main section.skills .skill-div ul li:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    main section.skills .skill-div ul li:hover::after {
+        animation: countUp 1s forwards;
+        opacity: 1;
+    }
+
+    main section.skills .skill-div ul li:hover::before {
+        animation: fillProgress 1s forwards cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    }
+
+    @keyframes countUp {
+        0% { content: "0%"; }
+        10% { content: "10%"; }
+        20% { content: "20%"; }
+        30% { content: "30%"; }
+        40% { content: "40%"; }
+        50% { content: "50%"; }
+        60% { content: "60%"; }
+        70% { content: "70%"; }
+        80% { content: "80%"; }
+        90% { content: "90%"; }
+        100% { content: attr(data-percentage); }
+    }
+
+    @keyframes fillProgress {
+        0% {
+            width: 0;
+            opacity: 0.7;
+            background: linear-gradient(90deg, 
+                #ff4d4d 0%, 
+                #ff9933 100%);
+        }
+        33% {
+            background: linear-gradient(90deg, 
+                #ff9933 0%, 
+                #ffcc00 100%);
+        }
+        66% {
+            background: linear-gradient(90deg, 
+                #ffcc00 0%, 
+                #66cc33 100%);
+        }
+        100% {
+            width: var(--skill-level, 100%);
+            opacity: 1;
+            background: linear-gradient(90deg, 
+                #66cc33 0%, 
+                #3399ff 100%);
+        }
+    }
+
 
 section.story {
     margin: 20px;

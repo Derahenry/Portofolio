@@ -38,7 +38,7 @@
 
     <div class="contact-form">
         <h1>SEND US A MESSAGE</h1>
-        <form action="https://formspree.io/f/mjvowzqk" method="POST">
+        <form id="contactForm" action="https://formspree.io/f/xjkeaqrg" method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" placeholder="Enter your full name" required>
 
@@ -50,6 +50,9 @@
 
             <button type="submit">Send Message</button>
         </form>
+        <div id="successMessage" style="display: none; color: #697565; text-align: center; margin-top: 20px; font-family: var(--font-family); font-weight: 500;">
+            Thank you! Your message has been sent successfully.
+        </div>
     </div>
 
     <script>
@@ -60,6 +63,52 @@
             navLinks.classList.toggle('nav-active');
             burger.classList.toggle('toggle');
         }
+
+        // Handle form submission
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            const button = form.querySelector('button[type="submit"]');
+            const successMessage = document.getElementById('successMessage');
+            
+            // Change button text to show loading state
+            const originalButtonText = button.textContent;
+            button.textContent = 'Sending...';
+            button.disabled = true;
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Clear the form
+                    form.reset();
+                    
+                    // Show success message
+                    successMessage.style.display = 'block';
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                    }, 5000);
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            } catch (error) {
+                alert('There was an error sending your message. Please try again.');
+            }
+            
+            // Reset button
+            button.textContent = originalButtonText;
+            button.disabled = false;
+        });
     </script>
 
 </body>

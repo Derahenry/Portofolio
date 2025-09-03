@@ -869,6 +869,6 @@ footer {
     }
 
     .contact-page .burger-menu span {
-        background-color: var(--white-color);
+        background-color: var(--dark-color);
     }
 }

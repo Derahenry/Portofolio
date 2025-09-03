@@ -539,6 +539,13 @@ section.story h1 {
     font-weight: 600;
     margin-bottom: 10px;
 }
+section.story h3 {
+    font-size: rem;
+    color: var(--dark-color);
+    font-family: var(--font-family);
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;}
 
  h1 span {
     color: var(--span-color);
@@ -825,6 +832,11 @@ footer {
         width: 80%;
         max-width: 100%;
         margin: 15px 0;
+    }
+
+    main section h1 {
+        font-size: 2.5rem;
+        text-align: center;
     }
 
     main section.skills .skill-container {

@@ -17,6 +17,16 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add scroll padding to account for fixed navigation */
+#projects,
+#skills {
+    scroll-margin-top: 100px;
+}
+
 html, body {
     overflow-x: hidden;
     width: 100%;
